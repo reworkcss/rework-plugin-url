@@ -1,17 +1,17 @@
 body {
-  background: url('/images/bg.png') repeat-x;
+  background: url( '/images/bg.png' ) repeat-x;
 }
 
 #logo {
-  background: url(/images/logo.jpeg);
+  background: url( /images/logo.jpeg );
 }
 
 @font-face {
   font-family: 'icons';
-  src: url("/icons/font/icons.eot");
-  src: url("/icons/font/icons.eot?#iefix")
+  src: url( "/icons/font/icons.eot" );
+  src: url("/icons/font/icons.eot?#iefix" )
     format('embedded-opentype'),
-    url("/icons/font/icons.woff")
+    url( "/icons/font/icons.woff")
     format('woff'),
     url("/icons/font/icons.ttf")
     format('truetype'),

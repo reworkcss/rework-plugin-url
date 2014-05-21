@@ -19,3 +19,16 @@ describe('.url(fn)', function () {
       .should.equal(fixture('url.out'));
   })
 })
+
+describe('.url(fn) with spaces inside parens', function () {
+  it('should map urls', function () {
+    function rewrite (url) {
+      return 'http://example.com' + url;
+    }
+
+    rework(fixture('url.spaces'))
+      .use(urlPlugin(rewrite))
+      .toString()
+      .should.equal(fixture('url.out'));
+  })
+})
