@@ -23,7 +23,9 @@ var func = require('rework-plugin-function');
 module.exports = function(fn) {
   return func({
     url: function(path){
-      return 'url("' + fn(path) + '")';
+      path = path.split('"').join('');
+      path = path.split('\'').join('');
+      return 'url("' + fn(path.trim()) + '")';
     }
   }, false);
 };
