@@ -1,7 +1,6 @@
 var rework = require('rework')
-  ,  mixin = require('../')
+  , urlPlugin = require('../')
   , fs = require('fs')
-  , assert = require('assert')
   , read = fs.readFileSync;
 
 function fixture (name) {
@@ -15,7 +14,7 @@ describe('.url(fn)', function () {
     }
 
     rework(fixture('url'))
-      .use(rework.url(rewrite))
+      .use(urlPlugin(rewrite))
       .toString()
       .should.equal(fixture('url.out'));
   })
