@@ -25,7 +25,7 @@ module.exports = function(fn) {
     url: function(path){
       path = path.split('"').join('');
       path = path.split('\'').join('');
-      return 'url("' + fn(path.trim()) + '")';
+      return 'url("' + fn.call(this, path.trim()) + '")';
     }
   }, false);
 };
