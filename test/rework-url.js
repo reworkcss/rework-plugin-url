@@ -18,6 +18,20 @@ describe('.url(fn)', function () {
       .toString()
       .should.equal(fixture('url.out'));
   })
+
+  it('should pass node as `this` value', function () {
+    var value;
+    function rewrite (url) {
+      value = this;
+      return url;
+    }
+
+    rework(fixture('url'))
+      .use(urlPlugin(rewrite))
+      .toString();
+
+    value.type.should.equal('declaration');
+  })
 })
 
 describe('.url(fn) with spaces inside parens', function () {
