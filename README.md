@@ -5,6 +5,14 @@ rework-plugin-url
 
 Map `url()` calls. Replace all `url()`s using a given function.
 
+## Installation
+
+```bash
+$ npm install --save rework-plugin-url
+```
+
+## Usage
+
 ```js
 var css = rework(read(css))
   .use(rework.url(function(url){
