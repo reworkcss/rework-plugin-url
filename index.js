@@ -23,6 +23,9 @@ var func = require('rework-plugin-function');
 module.exports = function(fn) {
   return func({
     url: function(path){
+      if (path.indexOf('data:image') === 0) {
+        return 'url("' + path + '")';
+      }
       path = path.split('"').join('');
       path = path.split('\'').join('');
       return 'url("' + fn.call(this, path.trim()) + '")';
